@@ -1,0 +1,127 @@
+/* Navbar styles */
+
+/* demo helper for standalone preview */
+.demo-body {
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s8);
+}
+
+.navbar {
+  background: var(--bg);
+  padding: clamp(16px, 4vw, 36px);
+  border-radius: 9999px; /* big capsule */
+  box-shadow: var(--shadow);
+  width: 100%; /* stretch full width on large screens */
+  overflow: hidden;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s6);
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-pill {
+  flex: 1 1 calc(50% - var(--s6)); /* two per row on mobile */
+  display: flex;
+  max-width: 260px; /* keep pills compact on mobile */
+}
+.nav-pill .nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px; /* slightly larger */
+  background: var(--pill);
+  color: var(--text);
+  border-radius: var(--rad-pill);
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: var(--shadow);
+  width: 100%;
+  font-size: clamp(0.95rem, 3.4vw, 1.1rem);
+}
+
+.nav-pill--shop {
+  flex: 1 1 100%;
+  order: -1; /* first on mobile */
+}
+.nav-pill--shop .nav-link {
+  background: var(--pill);
+  padding: 22px 34px; /* bigger primary pill */
+  font-weight: 800;
+  font-size: clamp(1.2rem, 5vw, 1.6rem);
+  gap: var(--s4);
+  width: 100%;
+}
+/* SHOP full width on mobile handled above */
+
+.nav-logo {
+  width: clamp(24px, 6vw, 36px);
+  height: clamp(24px, 6vw, 36px);
+  object-fit: contain;
+}
+
+/* Optional sidebar mode (apply .sidebar class on .navbar when used in page layout) */
+@media (min-width: 768px) {
+  /* Desktop/top-bar layout: all items inline */
+  .nav-list {
+    gap: clamp(var(--s6), 5vw, var(--s10));
+  }
+  .nav-pill {
+    flex: 0 0 auto;
+    max-width: none; /* remove mobile cap on desktop */
+  }
+  .nav-pill--shop {
+    flex: 0 0 auto;
+    order: 0;
+  }
+  .nav-pill .nav-link {
+    padding: 14px 24px;
+    font-size: clamp(1rem, 1.1vw, 1.15rem);
+  }
+  .nav-pill--shop .nav-link {
+    padding: 24px 44px;
+    font-size: clamp(1.3rem, 1.7vw, 1.8rem);
+  }
+  .nav-pill .nav-link {
+    padding: 14px 24px;
+    font-size: clamp(1rem, 1.1vw, 1.125rem);
+  }
+  .nav-pill--shop .nav-link {
+    padding: 22px 40px;
+    font-size: clamp(1.25rem, 1.6vw, 1.75rem);
+  }
+  .navbar.sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 240px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--s8);
+  }
+  .navbar.sidebar .nav-list {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: var(--s6);
+  }
+  .navbar.sidebar .nav-pill .nav-link {
+    justify-content: flex-start;
+    padding: 14px 22px;
+  }
+  .navbar.sidebar .nav-pill--shop .nav-link {
+    padding: 18px 22px;
+    font-size: clamp(1rem, 2.2vw, 1.4rem);
+  }
+}
