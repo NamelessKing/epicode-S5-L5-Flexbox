@@ -1,0 +1,103 @@
+
+:root {
+
+  --bg: #fbf7e3; /* page background (cream) */
+  --pill: #f1d875; /* yellow honey tone - pill/button base */
+  --pill2: #f3df85; /* Add to cart background  */
+  --text: #612406; /* primary text color  */
+  --text-soft: #7a4a2a; /* secondary text */
+
+
+  --rad-lg: 24px;
+  --rad-xl: 40px;
+  --rad-pill: 999px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s6: 24px;
+  --s8: 32px;
+  --s10: 40px;
+
+  --shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  --maxw: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Utilities */
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-inline: var(--s6);
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+.jc-center {
+  justify-content: center;
+}
+.jc-between {
+  justify-content: space-between;
+}
+.ai-center {
+  align-items: center;
+}
+.gap-sm {
+  gap: var(--s4);
+}
+.gap-md {
+  gap: var(--s6);
+}
+.gap-lg {
+  gap: var(--s8);
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;
+  border-radius: var(--rad-pill);
+  background: var(--pill);
+  color: var(--text);
+  font-weight: 600;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+}
+.card {
+  border-radius: var(--rad-xl);
+  background: #fff7e5;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* small helper classes */
+.text-center {
+  text-align: center;
+}
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
